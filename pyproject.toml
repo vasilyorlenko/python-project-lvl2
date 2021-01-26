@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.0"
+description = ""
+authors = ["Vasily Orlenko <orlenko.vasily.p@gmail.com>"]
+packages = [
+  { include = "gendiff" },
+]
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+PyYAML = "^5.4.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.2"
+flake8 = "^3.8.4"
+pytest-cov = "^2.11.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
