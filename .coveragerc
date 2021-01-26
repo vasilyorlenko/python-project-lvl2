@@ -1,0 +1,4 @@
+[run]
+omit =
+    gendiff/scripts/*
+    gendiff/cli.py
