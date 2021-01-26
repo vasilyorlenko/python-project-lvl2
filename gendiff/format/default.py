@@ -14,8 +14,8 @@ def format_value(current_value, indent_level):
     padding = SPACES_PER_INDENT_LEVEL * indent_level
 
     lines = [
-        (' ' * padding)
-        + '{0}: {1}'.format(key, format_value(value, indent_level + 1))
+        (' ' * padding) +
+        '{0}: {1}'.format(key, format_value(value, indent_level + 1))
         for key, value in current_value.items()
     ]
 
@@ -42,35 +42,35 @@ def process_node(node, iterate, padding, indent_level):
 
     if node_type == 'removed':
         return (
-            pad_start('- ', padding)
-            + '{0}: {1}'.format(key, format_value(value, indent_level + 1))
+            pad_start('- ', padding) +
+            '{0}: {1}'.format(key, format_value(value, indent_level + 1))
         )
 
     if node_type == 'added':
         return (
-            pad_start('+ ', padding)
-            + '{0}: {1}'.format(key, format_value(value, indent_level + 1))
+            pad_start('+ ', padding) +
+            '{0}: {1}'.format(key, format_value(value, indent_level + 1))
         )
 
     if node_type == 'unchanged':
         return (
-            (' ' * padding)
-            + '{0}: {1}'.format(key, format_value(value, indent_level + 1))
+            (' ' * padding) +
+            '{0}: {1}'.format(key, format_value(value, indent_level + 1))
         )
 
     if node_type == 'updated':
         return (
-            pad_start('- ', padding)
-            + '{0}: {1}'.format(key, format_value(value[0], indent_level + 1))
-            + '\n'
-            + pad_start('+ ', padding)
-            + '{0}: {1}'.format(key, format_value(value[1], indent_level + 1))
+            pad_start('- ', padding) +
+            '{0}: {1}'.format(key, format_value(value[0], indent_level + 1)) +
+            '\n' +
+            pad_start('+ ', padding) +
+            '{0}: {1}'.format(key, format_value(value[1], indent_level + 1))
         )
 
     if node_type == 'nested':
         return (
-            (' ' * padding)
-            + '{0}: {{\n{1}\n{2}}}'.format(
+            (' ' * padding) +
+            '{0}: {{\n{1}\n{2}}}'.format(
                 key,
                 iterate(node['children'], indent_level + 1),
                 ' ' * padding,
