@@ -2,7 +2,7 @@ from os import path, getcwd
 
 from pytest import raises
 
-from gendiff.gendiff import generate_diff
+from gendiff import generate_diff
 
 
 def get_fixture_path(filename):
