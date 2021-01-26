@@ -4,7 +4,7 @@ from gendiff.format.default import format_default
 from gendiff.format.plain import format_plain
 
 formatters = {
-    'default': format_default,
+    'stylish': format_default,
     'plain': format_plain,
     'json': dumps,
 }

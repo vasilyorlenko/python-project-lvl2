@@ -47,7 +47,7 @@ def build_diff(parsed_file1, parsed_file2):
     return diff
 
 
-def generate_diff(first_filepath, second_filepath, format_type='default'):
+def generate_diff(first_filepath, second_filepath, format_type='stylish'):
     file1 = open(abspath(first_filepath), 'r')
     file2 = open(abspath(second_filepath), 'r')
     parsed_file1 = get_parser(first_filepath)(file1)

@@ -6,6 +6,6 @@ parser.add_argument('filepath2')
 parser.add_argument(
     '-f',
     '--format',
-    default='default',
+    default='stylish',
     help='set format of output',
 )
